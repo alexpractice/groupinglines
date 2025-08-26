@@ -31,6 +31,7 @@ public class InputFileProcessor {
             LineProcessor.getKeyMap()
                     .values().stream()
                     .flatMap(it -> it.values().stream())
+                    .filter(it -> it.size() > 1)
                     .distinct()
                     .forEach(priorityQueue::add);
 
